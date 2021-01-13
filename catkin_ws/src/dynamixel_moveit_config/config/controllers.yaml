@@ -1,0 +1,8 @@
+controller_list:
+  - name: cool5000_trajectory_controller_2
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - shoulder
+      - elbow

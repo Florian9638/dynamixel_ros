@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: cool5000_description
+    relative_path: urdf/cool5000.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/cool5000_description.srdf
+  CONFIG:
+    author_name: Florian
+    author_email: florian.dallago@gmail.com
+    generated_timestamp: 1610532290
