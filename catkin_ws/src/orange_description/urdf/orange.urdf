@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot name="cool5000_description">
+<robot name="orange">
 
   <material name="blue">
     <color rgba="0 0 0.8 1"/>
@@ -89,7 +89,7 @@
     </gazebo>
   </link>
 
-  <joint name="shoulder" type="revolute">
+  <joint name="pan" type="revolute">
     <parent link="fixed_link"/>
     <child link="homerus"/>
     <axis xyz="0 0 1"/> <!-- rotates around the z-axis -->
@@ -129,7 +129,7 @@
     </gazebo>
   </link>
 
-  <joint name="elbow" type="revolute">
+  <joint name="tilt" type="revolute">
     <parent link="homerus"/>
     <child link="forearm"/>
     <axis xyz="0 0 1"/> <!-- rotates around the z-axis -->
@@ -180,7 +180,7 @@
 
   <transmission name="transmission1">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="shoulder">
+    <joint name="pan">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
       <actuator name="motor1">
@@ -191,7 +191,7 @@
 
   <transmission name="transmission2">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="elbow">
+    <joint name="tilt">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
       <actuator name="motor2">

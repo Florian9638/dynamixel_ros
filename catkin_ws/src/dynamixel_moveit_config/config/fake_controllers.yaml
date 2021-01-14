@@ -1,8 +1,0 @@
-controller_list:
-  - name: fake_dynamixel_arm_controller
-    joints:
-      - shoulder
-      - elbow
-initial:  # Define initial robot poses.
-  - group: dynamixel_arm
-    pose: home_pose

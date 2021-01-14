@@ -8,7 +8,10 @@ project(my_dynamixel_tutorial)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  dynamixel_controllers
+  dynamixel_sdk
+  dynamixel_workbench_controllers
+  dynamixel_workbench_msgs
+  dynamixel_workbench_toolbox
   roscpp
   rospy
   std_msgs
@@ -71,7 +74,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs
+#   dynamixel_workbench_msgs#   std_msgs
 # )
 
 ################################################
@@ -106,7 +109,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES my_dynamixel_tutorial
-#  CATKIN_DEPENDS dynamixel_controllers roscpp rospy std_msgs
+#  CATKIN_DEPENDS dynamixel_sdk dynamixel_workbench_controllers dynamixel_workbench_msgs dynamixel_workbench_toolbox roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
