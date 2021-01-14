@@ -1,0 +1,1 @@
+/home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/.private/cool5000_description/share/cool5000_description/cmake/cool5000_descriptionConfig.cmake

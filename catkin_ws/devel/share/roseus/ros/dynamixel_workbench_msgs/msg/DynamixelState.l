@@ -1,0 +1,1 @@
+/home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/.private/dynamixel_workbench_msgs/share/roseus/ros/dynamixel_workbench_msgs/msg/DynamixelState.l

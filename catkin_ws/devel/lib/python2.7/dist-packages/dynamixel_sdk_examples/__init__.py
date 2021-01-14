@@ -1,0 +1,1 @@
+/home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/.private/dynamixel_sdk_examples/lib/python2.7/dist-packages/dynamixel_sdk_examples/__init__.py

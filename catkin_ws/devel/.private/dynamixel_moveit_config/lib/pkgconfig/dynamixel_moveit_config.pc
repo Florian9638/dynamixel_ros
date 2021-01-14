@@ -1,0 +1,8 @@
+prefix=/home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/.private/dynamixel_moveit_config
+
+Name: dynamixel_moveit_config
+Description: Description of dynamixel_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

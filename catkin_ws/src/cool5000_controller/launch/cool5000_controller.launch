@@ -47,26 +47,13 @@
       <!-- Load joint controller configuration from YAML file to parameter server -->
   <rosparam file="$(find cool5000_controller)/config/cool5000.yaml" command="load"/>
 
-    <!-- Start all SmartArm joint controllers -->
-    <node name="controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
-          args="--manager=dxl_manager
-                --port dynamixel_port
-                joint1_controller
-                joint2_controller"
-		   output="screen"/>
 
-   <!-- Start the cool5000 arm trajectory controller -->
+
 	<rosparam file="$(find cool5000_controller)/config/cool5000_trajectory_controller.yaml" command="load"/>
-    <node name="controller_spawner_meta" pkg="dynamixel_controllers" type="controller_spawner.py"
-    args="--manager=dxl_manager
-          --type=meta
-          cool5000_trajectory_controller
-          joint1_controller
-          joint2_controller"
-          output="screen"/>
 
-  <!-- Publish combined joint info -->
-  <include file="$(find cool5000_controller)/launch/joint_state_aggregator.launch" />
+
+
+  <!-- <include file="$(find cool5000_controller)/launch/joint_state_aggregator.launch" /> -->
 
   <!-- URDF -> Param Server -->
   <param name="robot_description" textfile="$(find cool5000_description)/urdf/cool5000.urdf" />
@@ -74,6 +61,6 @@
   type="joint_state_publisher" output="screen">
   <rosparam param="source_list">[joint_states]</rosparam>
   <rosparam param="use_gui">FALSE</rosparam>
-  </node> -->
+  </node>
 
   </launch>

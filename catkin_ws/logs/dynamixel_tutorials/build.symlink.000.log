@@ -1,0 +1,3 @@
+Symlinking /home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/lib/pkgconfig/dynamixel_tutorials.pc
+Symlinking /home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/share/dynamixel_tutorials/cmake/dynamixel_tutorialsConfig.cmake
+Symlinking /home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/share/dynamixel_tutorials/cmake/dynamixel_tutorialsConfig-version.cmake

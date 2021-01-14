@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/.private/my_dynamixel_tutorial/setup.sh

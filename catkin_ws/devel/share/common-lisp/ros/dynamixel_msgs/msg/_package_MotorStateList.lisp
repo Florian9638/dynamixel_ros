@@ -1,0 +1,1 @@
+/home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/.private/dynamixel_msgs/share/common-lisp/ros/dynamixel_msgs/msg/_package_MotorStateList.lisp

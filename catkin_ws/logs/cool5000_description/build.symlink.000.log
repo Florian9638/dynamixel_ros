@@ -1,0 +1,3 @@
+Symlinking /home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/lib/pkgconfig/cool5000_description.pc
+Symlinking /home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/share/cool5000_description/cmake/cool5000_descriptionConfig.cmake
+Symlinking /home/florian/Aigritec/dynamixel_ros/catkin_ws/devel/share/cool5000_description/cmake/cool5000_descriptionConfig-version.cmake

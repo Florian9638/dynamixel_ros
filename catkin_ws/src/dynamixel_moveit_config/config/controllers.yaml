@@ -1,5 +1,5 @@
 controller_list:
-  - name: cool5000_trajectory_controller_2
+  - name: cool5000_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true

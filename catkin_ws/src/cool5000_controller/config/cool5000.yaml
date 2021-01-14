@@ -1,6 +1,6 @@
 joint1_controller:
     controller:
-        package: dynamixel_controllers
+        package: dynamixel_workbench_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: shoulder # joint1
@@ -14,7 +14,7 @@ joint1_controller:
 
 joint2_controller:
     controller:
-        package: dynamixel_controllers
+        package: dynamixel_workbench_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: elbow # joint2
