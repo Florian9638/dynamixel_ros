@@ -1,0 +1,16 @@
+#orange:                    #useful if you use a namespace for the robot
+    # Publish joint states
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 50
+
+    orange_arm_controller:
+        type: position_controllers/JointTrajectoryController
+        joints:
+            - pan
+            - tilt
+
+        constraints:
+            goal_time: 2.0
+
+        state_publish_rate: 25

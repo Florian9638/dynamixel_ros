@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: orange_description
+    relative_path: urdf/orange.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/orange.srdf
+  CONFIG:
+    author_name: Florian
+    author_email: florian.dallago@gmail.com
+    generated_timestamp: 1611069731

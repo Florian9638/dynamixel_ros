@@ -1,0 +1,22 @@
+<launch>
+
+<!-- URDF -> Param Server -->
+<param name="robot_description" textfile="$(find orange_description)/urdf/orange.urdf" />
+
+<!-- Load joint controller configurations from YAML file to parameter server -->
+<rosparam file="$(find orange_description)/config/orange_control.yaml" command="load"/>
+
+<!-- load the controllers -->
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller orange_arm_controller" />
+
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+<include file="$(find orange_moveit_config)/launch/planning_context.launch">
+  <arg name="load_robot_description" value="true"/>
+</include>
+<include file="$(find orange_moveit_config)/launch/move_group.launch" />
+<include file="$(find orange_moveit_config)/launch/moveit_rviz.launch" />
+
+<node name="joint_state_desired_publisher" pkg="topic_tools" type="relay" args="joint_states joint_states_desired" />
+
+</launch>
