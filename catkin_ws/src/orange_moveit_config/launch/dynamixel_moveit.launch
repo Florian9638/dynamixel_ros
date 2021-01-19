@@ -3,13 +3,37 @@
 <!-- URDF -> Param Server -->
 <param name="robot_description" textfile="$(find orange_description)/urdf/orange.urdf" />
 
-<!-- Load joint controller configurations from YAML file to parameter server -->
+
+<!-- <arg name="paused" default="false"/>
+<arg name="use_sim_time" default="true"/>
+<arg name="gui" default="true"/>
+<arg name="headless" default="false"/>
+<arg name="debug" default="false"/>
+
+
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+	<arg name="debug" value="$(arg debug)"/>
+	<arg name="gui" value="$(arg gui)"/>
+	<arg name="paused" value="$(arg paused)"/>
+	<arg name="use_sim_time" value="$(arg use_sim_time)"/>
+	<arg name="headless" value="$(arg headless)"/>
+</include>
+
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model orange"/> -->
+
+
 <rosparam file="$(find orange_description)/config/orange_control.yaml" command="load"/>
 
 <!-- load the controllers -->
 <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller orange_arm_controller" />
 
-<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" /> -->
+
+ <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+   <param name="publish_frequency" type="double" value="100.0" />
+   <param name="tf_prefix" type="string" value="" />
+ </node>
+
 
 <include file="$(find orange_moveit_config)/launch/planning_context.launch">
   <arg name="load_robot_description" value="true"/>
