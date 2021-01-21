@@ -1,0 +1,4 @@
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/lib/pkgconfig/open_manipulator_hw.pc
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/lib/open_manipulator_hw/omx_control_node
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/share/open_manipulator_hw/cmake/open_manipulator_hwConfig.cmake
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/share/open_manipulator_hw/cmake/open_manipulator_hwConfig-version.cmake

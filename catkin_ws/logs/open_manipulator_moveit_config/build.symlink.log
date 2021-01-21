@@ -1,0 +1,3 @@
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/lib/pkgconfig/open_manipulator_moveit_config.pc
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/share/open_manipulator_moveit_config/cmake/open_manipulator_moveit_configConfig.cmake
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/share/open_manipulator_moveit_config/cmake/open_manipulator_moveit_configConfig-version.cmake

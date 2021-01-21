@@ -1,0 +1,5 @@
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/lib/libdynamixel_sdk.so
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/lib/python2.7/dist-packages/dynamixel_sdk/__init__.py
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/lib/pkgconfig/dynamixel_sdk.pc
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/share/dynamixel_sdk/cmake/dynamixel_sdkConfig-version.cmake
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/share/dynamixel_sdk/cmake/dynamixel_sdkConfig.cmake

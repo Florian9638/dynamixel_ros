@@ -1,0 +1,1 @@
+/home/florian/dynamixel_ros/catkin_ws/devel/.private/orange_description/lib/pkgconfig/orange_description.pc

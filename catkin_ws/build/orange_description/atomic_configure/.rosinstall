@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/florian/dynamixel_ros/catkin_ws/devel/.private/orange_description/setup.sh

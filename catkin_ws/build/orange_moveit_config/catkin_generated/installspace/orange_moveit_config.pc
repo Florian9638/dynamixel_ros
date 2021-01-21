@@ -1,0 +1,8 @@
+prefix=/home/florian/dynamixel_ros/catkin_ws/install
+
+Name: orange_moveit_config
+Description: Description of orange_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

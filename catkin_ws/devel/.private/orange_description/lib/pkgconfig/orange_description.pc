@@ -1,0 +1,8 @@
+prefix=/home/florian/dynamixel_ros/catkin_ws/devel/.private/orange_description
+
+Name: orange_description
+Description: Description of orange_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

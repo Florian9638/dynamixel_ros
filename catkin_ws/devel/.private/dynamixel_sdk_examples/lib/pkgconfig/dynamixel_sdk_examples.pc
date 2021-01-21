@@ -1,0 +1,8 @@
+prefix=/home/florian/dynamixel_ros/catkin_ws/devel/.private/dynamixel_sdk_examples
+
+Name: dynamixel_sdk_examples
+Description: Description of dynamixel_sdk_examples
+Version: 0.1.0
+Cflags: -I/home/florian/dynamixel_ros/catkin_ws/devel/.private/dynamixel_sdk_examples/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs dynamixel_sdk

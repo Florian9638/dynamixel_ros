@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/florian/dynamixel_ros/catkin_ws/build/roboticsgroup_gazebo_plugins/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_01c44/fast"
+/usr/bin/make -f CMakeFiles/cmTC_01c44.dir/build.make CMakeFiles/cmTC_01c44.dir/build
+make[1]: ingresso nella directory "/home/florian/dynamixel_ros/catkin_ws/build/roboticsgroup_gazebo_plugins/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_01c44.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_01c44.dir/CheckSymbolExists.c.o   -c /home/florian/dynamixel_ros/catkin_ws/build/roboticsgroup_gazebo_plugins/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_01c44
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01c44.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_01c44.dir/CheckSymbolExists.c.o  -o cmTC_01c44 
+CMakeFiles/cmTC_01c44.dir/CheckSymbolExists.c.o: nella funzione "main":
+CheckSymbolExists.c:(.text+0x1b): riferimento non definito a "pthread_create"
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_01c44.dir/build.make:97: recipe for target 'cmTC_01c44' failed
+make[1]: *** [cmTC_01c44] Error 1
+make[1]: uscita dalla directory "/home/florian/dynamixel_ros/catkin_ws/build/roboticsgroup_gazebo_plugins/CMakeFiles/CMakeTmp"
+Makefile:126: recipe for target 'cmTC_01c44/fast' failed
+make: *** [cmTC_01c44/fast] Error 2
+
+File /home/florian/dynamixel_ros/catkin_ws/build/roboticsgroup_gazebo_plugins/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/florian/dynamixel_ros/catkin_ws/build/roboticsgroup_gazebo_plugins/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2382d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2382d.dir/build.make CMakeFiles/cmTC_2382d.dir/build
+make[1]: ingresso nella directory "/home/florian/dynamixel_ros/catkin_ws/build/roboticsgroup_gazebo_plugins/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_2382d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2382d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2382d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2382d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_2382d.dir/CheckFunctionExists.c.o  -o cmTC_2382d -lpthreads 
+/usr/bin/ld: impossibile trovare -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2382d.dir/build.make:97: recipe for target 'cmTC_2382d' failed
+make[1]: *** [cmTC_2382d] Error 1
+make[1]: uscita dalla directory "/home/florian/dynamixel_ros/catkin_ws/build/roboticsgroup_gazebo_plugins/CMakeFiles/CMakeTmp"
+Makefile:126: recipe for target 'cmTC_2382d/fast' failed
+make: *** [cmTC_2382d/fast] Error 2
+
+

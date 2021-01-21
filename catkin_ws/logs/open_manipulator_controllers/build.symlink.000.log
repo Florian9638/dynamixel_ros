@@ -1,0 +1,4 @@
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/lib/libopen_manipulator_controllers.so
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/lib/pkgconfig/open_manipulator_controllers.pc
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/share/open_manipulator_controllers/cmake/open_manipulator_controllersConfig.cmake
+Symlinking /home/florian/dynamixel_ros/catkin_ws/devel/share/open_manipulator_controllers/cmake/open_manipulator_controllersConfig-version.cmake
