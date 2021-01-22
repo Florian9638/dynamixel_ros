@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+
+<robot name="orange">
+
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+  <!-- Gazebo -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    </plugin>
+  </gazebo>
+
+  <!-- Fixing robot to the Gazebo world -->
+  <link name="world"/>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="fixed_link"/>
+  </joint>
+
+  <!-- Robot description -->
+
+  <link name="fixed_link">
+    <visual>
+      <geometry>
+        <box size="0.065 0.03 0.02"/>
+      </geometry>
+      <material name="blue"/>
+      <origin rpy="0 0 0" xyz="0.0325 0 0"/>
+    </visual>
+
+    <collision>
+        <geometry>
+          <box size="0.065 0.03 0.02"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0.0325 0 0"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.0325 0.015 0.01" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+
+    <gazebo reference="fixed_link">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+  </link>
+
+
+  <link name="homerus">
+    <visual>
+      <geometry>
+        <box size="0.100 0.02 0.02"/>
+      </geometry>
+      <material name="white"/>
+      <origin rpy="0 0 0" xyz="0.05 0 0"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="0.100 0.02 0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.05 0 0"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.05 0.01 0.01" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+
+    <gazebo reference="homerus">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+  </link>
+
+  <joint name="pan" type="revolute">
+    <parent link="fixed_link"/>
+    <child link="homerus"/>
+    <axis xyz="0 0 1"/> <!-- rotates around the z-axis -->
+    <origin rpy="0 0 0" xyz="0.065 0 0"/> <!-- defined in terms of the parents' reference frame -->
+    <limit lower="-1.57" upper="1.57" effort="100" velocity="0.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+
+  <link name="forearm">
+    <visual>
+      <geometry>
+        <box size="0.120 0.02 0.01"/>
+      </geometry>
+      <material name="white"/>
+      <origin rpy="0 0 0" xyz="0.06 0 0"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="0.120 0.02 0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.06 0 0"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.06 0.01 0.005" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+
+    <gazebo reference="forearm">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+  </link>
+
+  <joint name="tilt" type="revolute">
+    <parent link="homerus"/>
+    <child link="forearm"/>
+    <axis xyz="0 0 1"/> <!-- rotates around the z-axis -->
+    <origin rpy="0 0 0" xyz="0.100 0 0"/> <!-- defined in terms of the parents' reference frame -->
+    <limit lower="-1.57" upper="1.57" effort="100" velocity="0.5"/>
+    <dynamics damping="0.7"/>
+  </joint>
+
+  <link name="end_effector">
+    <visual>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="blue"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+
+    <gazebo reference="end_effector">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+  </link>
+
+  <joint name="end_joint" type="fixed">
+    <parent link="forearm"/>
+    <child link="end_effector"/>
+    <origin rpy="0 0 0" xyz="0.120 0 0"/> <!-- defined in terms of the parents' reference frame -->
+  </joint>
+
+
+  <!--  TRANSMISSIONS  -->
+
+  <transmission name="transmission1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="pan">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor1">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+  <transmission name="transmission2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="tilt">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor2">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+</robot>
